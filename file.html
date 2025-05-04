@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love Storey</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+
+    /* Video background styling */
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    /* Overlay to darken the video for better text readability */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    /* Centered container */
+    .container {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Password box styling */
+    .password-box {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .password-box h1 {
+      margin-bottom: 20px;
+      font-size: 36px;
+    }
+
+    .password-box p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .password-box input {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .password-box button {
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .password-box button:hover {
+      background-color: #004f8c;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #ff6666;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop class="video-background">
+    <source src="https://www.videvo.net/videvo_files/converted/2016_08/preview/160812_Concert_01.mp412003.webm" type="video/webm">
+    <source src="https://www.videvo.net/videvo_files/converted/2016_08/preview/160812_Concert_01.mp412003.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Content -->
+  <div class="container">
+    <div class="password-box">
+      <h1>Love Storey</h1>
+      <p>Enter the password to access our secret site:</p>
+      <input type="password" id="password" placeholder="Enter Password" />
+      <br />
+      <button onclick="checkPassword()">Submit</button>
+      <p id="message" class="message"></p>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('password').value.toLowerCase();
+      const correctPassword = 'cifghaj';
+
+      if (input === correctPassword) {
+        window.location.href = "https://www.your-secret-website.com"; // Replace with your actual URL
+      } else {
+        document.getElementById('message').textContent = 'Incorrect password, please try again.';
+      }
+    }
+  </script>
+
+</body>
+</html>
